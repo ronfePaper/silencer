@@ -1,0 +1,21 @@
+body {
+    font-family: 'segoe ui', 'lucida grande', "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+    font-size: 100%;
+    width: 500px;
+    min-width: 500px;
+    margin: 5px 10px 5px 10px;
+}
+
+#status {
+    /* avoid an excessively wide status text */
+    white-space: pre;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+.page-header {
+    padding-bottom: 1px;
+    margin: 5px 10px 5px 10px;
+    border-bottom: 1px solid #eee;
+}
