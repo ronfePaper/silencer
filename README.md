@@ -3,16 +3,7 @@ A keyword Extractor Chrome Extension
 
 ## How it works
 
-This extractor uses jQuery to send ajax POST request with current tab's url
-
-to an Nginx powered server. The Nginx redirect the request to the node, and 
-
-node simply passes the url into a python script which do the main processing
-
-logic, and return the result to the node. When the result is received, the 
-
-callback function would be called to send response to the chrome extension.
-
+This extractor uses jQuery to send ajax POST request with current tab's urlto an Nginx powered server. The Nginx redirect the request to the node, and node simply passes the url into a python script which do the main processing logic, and return the result to the node. When the result is received, the callback function would be called to send response to the chrome extension.
 
 ## How to deploy
 
