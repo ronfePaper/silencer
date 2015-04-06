@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
     getCurrentTabUrl(function (pageUrl) {
         $.ajax({
             type: 'POST',
-            url: 'http://crm.yangjichang.wang/url',
+            url: 'http://crm.ronfe.net/url',
             data: {url: pageUrl},
             crossDomain: true,
             beforeSend: function () {
