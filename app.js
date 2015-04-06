@@ -5,6 +5,7 @@
 var express = require('express');
 var cors = require('cors');
 var bodyParser = require('body-parser');
+var pythonShell = require('python-shell');
 
 var app = express();
 var port = process.env.PORT || 11700;
@@ -20,7 +21,19 @@ app.get('/url?u=:uu', function (req, res) {
 });
 
 app.post('/url', function (req, res) {
-    res.end('Hi ' + req.body.url);
+    var pyshell = new pythonShell('./calc.py');
+    pyshell.send(req.body.url);
+    pyshell.on('message', function (message) {
+        res.end(message);
+    });
+
+    pyshell.end(function (err) {
+        if (err) {
+            console.error(err);
+        }
+        console.log('this time finished');
+    });
+    //res.end('Hi ' + req.body.url);
 });
 
 app.get('/', function (req, res) {
