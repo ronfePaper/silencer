@@ -25,12 +25,9 @@ The following great open projects are used in this repo, many thanks go there (o
 
 And the following npm packages:
 
-body-parser;
-
-cors;
-
-express;
-
-python-shell;
+* body-parser;
+* cors;
+* express;
+* python-shell;
 
 ronfe
