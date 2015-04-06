@@ -16,14 +16,11 @@ app.use(bodyParser.json());
 app.use(cors());
 
 //routes for api
-app.get('/url?u=:uu', function (req, res) {
-    res.end('Server received request of url: ' + req.params.uu);
-});
-
 app.post('/url', function (req, res) {
     var pyshell = new pythonShell('./calc.py');
     pyshell.send(req.body.url);
     pyshell.on('message', function (message) {
+        console.log(message);
         res.end(message);
     });
 

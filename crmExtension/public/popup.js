@@ -27,6 +27,9 @@ document.addEventListener('DOMContentLoaded', function () {
             url: 'http://localhost:11700/url',
             data: {url: pageUrl},
             crossDomain: true,
+            beforeSend: function () {
+                renderStatus("Processing...");
+            },
             success: function (text) {
                 renderStatus(text);
             }
