@@ -15,7 +15,7 @@ for each in f:
         #strip HTML tags
         tempSentence = re.sub('<[^<]+?>', '', each)
         #Decode to unicode
-        tempSentence = tempSentence.decode('gb2312')
+        tempSentence = tempSentence.decode('utf8')
         #push to list
         g.append(tempSentence)
 
@@ -24,7 +24,7 @@ g = '\n'.join(g)
 
 #Calc the keyword
 s = SnowNLP(g)
-keyWords = s.keywords(5)
+keyWords = s.keywords(10)
 
 #filter single character word
 out = []

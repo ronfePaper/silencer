@@ -24,15 +24,19 @@ document.addEventListener('DOMContentLoaded', function () {
     getCurrentTabUrl(function (pageUrl) {
         $.ajax({
             type: 'POST',
-            url: 'http://crm.ronfe.net/url',
+            url: 'http://localhost:11700/url',
             data: {url: pageUrl},
             crossDomain: true,
             beforeSend: function () {
                 renderStatus("Processing...");
             },
+            error: function(){
+                renderStatus("Failed, try again later...");
+            },
             success: function (text) {
                 renderStatus(text);
-            }
+            },
+            timeout: 10000
         });
     });
 });
