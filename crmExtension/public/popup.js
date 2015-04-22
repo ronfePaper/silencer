@@ -16,7 +16,10 @@ function getCurrentTabUrl(callback) {
     });
 }
 
-function renderStatus(statusText) {
+function renderStatus(statusText, showCat) {
+    if (showCat){
+        $('#cate').removeClass('hidden');
+    }
     document.getElementById('status').textContent = statusText;
 }
 
@@ -27,16 +30,16 @@ document.addEventListener('DOMContentLoaded', function () {
             url: 'http://localhost:11700/url',
             data: {url: pageUrl},
             crossDomain: true,
+            timeout: 10000,
             beforeSend: function () {
-                renderStatus("Processing...");
+                renderStatus("Processing...", false);
             },
             error: function(){
-                renderStatus("Failed, try again later...");
+                renderStatus("Failed, try again later...", false);
             },
             success: function (text) {
-                renderStatus(text);
-            },
-            timeout: 10000
+                renderStatus(text, true);
+            }
         });
     });
 });
