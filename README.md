@@ -12,7 +12,7 @@ On a Nginx linux server, do following
 * Clone this at somewhere
 * `npm install`
 * `pip install snownlp`
-* `pip install scipy`
+* Go to http://scipy.org/install.html and install scipy on your server
 * `screen -R` Add a screen (if you do not have screen installed, install at first)
 * `node app`
 
