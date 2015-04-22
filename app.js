@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 //routes for api
-app.post('/url', function (req, res) {
+app.post('/textrank', function (req, res) {
     var pyshell = new pythonShell('./calc.py');
     pyshell.send(req.body.url);
     pyshell.on('message', function (message) {
@@ -28,7 +28,24 @@ app.post('/url', function (req, res) {
         if (err) {
             console.error(err);
         }
-        console.log('this time finished');
+        console.log('textrank finished');
+    });
+    //res.end('Hi ' + req.body.url);
+});
+
+app.post('/ll', function (req, res) {
+    var pyshell = new pythonShell('./calc2.py');
+    pyshell.send(req.body.url);
+    pyshell.on('message', function (message) {
+        console.log(message);
+        res.end(message);
+    });
+
+    pyshell.end(function (err) {
+        if (err) {
+            console.error(err);
+        }
+        console.log('ll finished');
     });
     //res.end('Hi ' + req.body.url);
 });

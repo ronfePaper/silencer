@@ -22,3 +22,25 @@ body {
     text-align: center;
     border-bottom: 1px solid #eee;
 }
+
+.result {
+    margin: 5px 5px 5px 5px;
+}
+
+.intro {
+    font-weight: 900;
+}
+
+.lines {
+    padding: 0 20px 0;
+    margin: 20px 0;
+    line-height: 1px;
+    border-left: 200px solid #ddd;
+    border-right: 200px solid #ddd;
+    text-align: center;
+}
+
+.well {
+    margin-top: 10px;
+    font-family: monospace;
+}

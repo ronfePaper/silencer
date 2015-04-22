@@ -4,6 +4,7 @@
 <head>
     <title>Keyword Extractor</title>
     <link rel='stylesheet' href='popup.css'>
+    <meta charset='utf8'>
     <!-- Laad bootstrap -->
     <link rel='stylesheet' href='http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.css'>
     <script src='http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js'></script>
@@ -16,14 +17,19 @@
 </head>
 <body>
 <div class='page-header'>
-    <h4>Keywords Extractor</h4>
+    <h4>中文网页关键词提取</h4>
 </div>
 
-<div class='result'>
-    <div id='cate' class='hidden'>TRY TEXTRANK</div>
-    <div id='status'></div>
+<div class='result textrank'>
+    <div id='cate' class='intro hidden'>TEXTRANK算法</div>
+    <div id='textstatus'></div>
+</div>
+<div class='lines'></div>
+<div id='ll' class='result hidden'>
+    <div id='cate2' class='intro hidden'>Log-Likelihood算法</div>
+    <div id='llstatus'></div>
 </div>
 
-<div id='image-result' hidden></div>
+<div class="well">&copy; 2015 JI Hongfei | Project silencer | <span>[Github](https://github.com/ronfePaper/silencer )</span></div>
 </body>
 </html>
