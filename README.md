@@ -12,6 +12,7 @@ On a Nginx linux server, do following
 * Clone this at somewhere
 * `npm install`
 * `pip install snownlp`
+* `pip install scipy`
 * `screen -R` Add a screen (if you do not have screen installed, install at first)
 * `node app`
 
@@ -24,6 +25,8 @@ The following great open projects are used in this repo, many thanks go there (o
 [jQuery](https://github.com/jquery/jquery )
 
 [Nginx](https://github.com/nginx/nginx )
+
+[SciPy](http://scipy.org )
 
 [snownlp](https://github.com/isnowfy/snownlp )
 
