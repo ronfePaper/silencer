@@ -44,3 +44,7 @@ body {
     margin-top: 10px;
     font-family: monospace;
 }
+
+#wordle {
+    float: center;
+}

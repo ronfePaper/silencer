@@ -33,12 +33,13 @@ function renderLLStatus(statusText, showCat) {
 
 document.addEventListener('DOMContentLoaded', function () {
     getCurrentTabUrl(function (pageUrl) {
+        var keywords = [];
         $.ajax({
             type: 'POST',
-            url: 'http://121.42.165.70:11700/textrank',
+            url: 'http://localhost:11700/textrank',
             data: {url: pageUrl},
             crossDomain: true,
-            timeout: 10000,
+            timeout: 15000,
             beforeSend: function () {
                 renderStatus("Processing...", false);
             },
@@ -46,23 +47,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 renderStatus("Failed, try again later...", false);
             },
             success: function (text) {
-                renderStatus(text, true);
-            }
-        });
-        $.ajax({
-            type: 'POST',
-            url: 'http://121.42.165.70:11700/ll',
-            data: {url: pageUrl},
-            crossDomain: true,
-            timeout: 10000,
-            beforeSend: function () {
-                renderStatus("Processing...", false);
-            },
-            error: function(){
-                renderStatus("Failed, try again later...", false);
-            },
-            success: function (text) {
-                renderLLStatus(text, true);
+                console.log(text[2]);
+                renderStatus(text[0], true);
+                renderLLStatus(text[1], true);
+                WordCloud(document.getElementById('wordle'), {
+                    list: text[2],
+                    gridSize:3,
+                    weightFactor: 5
+                } );
+                $('#cate3').removeClass('hidden');
             }
         });
     });
