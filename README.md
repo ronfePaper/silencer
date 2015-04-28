@@ -30,6 +30,8 @@ The following great open projects are used in this repo, many thanks go there (o
 
 [snownlp](https://github.com/isnowfy/snownlp )
 
+[wordcloud2.js](https://github.com/timdream/wordcloud2.js )
+
 And the following npm packages:
 
 * body-parser;
