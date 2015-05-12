@@ -21,7 +21,10 @@ for each in f:
         #strip HTML tags
         tempSentence = re.sub('<[^<]+?>', '', each)
         #Decode to unicode
-        tempSentence = tempSentence.decode('utf8')
+        try:
+            tempSentence = tempSentence.decode('utf8')
+        except:
+            tempSentence = tempSentence.decode('gb2312')
         #push to list
         g.append(tempSentence)
 
@@ -45,15 +48,15 @@ for each in segCounts:
         testArray = [[each[1], segSum], [dictT, sumWords]]
         g, p, dof, expctd = stats.chi2_contingency(testArray, lambda_="log-likelihood")
         if p < 0.05:
-            llOutput[each[0]] = g     
+            llOutput[each[0]] = g
     except:
         next
-    
+
 sortedOutput = sorted(llOutput.iteritems(), key=lambda asd:asd[1], reverse=True)
 out = []
-for each in sortedOutput[0:20]:
+for each in sortedOutput[0:40]:
     if len(each[0]) > 1:
         out.append(each[0].encode('utf8'))
-        
+
 output = ','.join(out)
 print output

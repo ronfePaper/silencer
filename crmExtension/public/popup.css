@@ -4,6 +4,7 @@ body {
     width: 500px;
     min-width: 500px;
     margin: 5px 10px 5px 10px;
+    overflow: hidden;
 }
 
 #status {
@@ -45,6 +46,8 @@ body {
     font-family: monospace;
 }
 
-#wordle {
+.wordle {
     float: center;
+    margin-left: 6.5em;
+
 }
